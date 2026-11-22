@@ -1,4 +1,4 @@
-# CLITextTable
+﻿# CLITextTable
 
 Mała biblioteka .NET do rysowania tabel tekstowych w konsoli, z kolorami wierszy i pojedynczych komórek.
 
@@ -35,64 +35,33 @@ table.Print();
 ```
 
 ## Przykładowe tabele
-Pełny kod przykładów jest w [examples/CLITextTable.Examples/Program.cs](examples/CLITextTable.Examples/Program.cs). Uruchomienie:
+Pełny kod przykładów jest w [examples/CLITextTable.Examples/Program.cs](examples/CLITextTable.Examples/Program.cs). Uruchomienie (tabele pojawią się w konsoli, a obrazki poniżej zostaną odświeżone w `docs/images`):
 ```
 dotnet run --project examples/CLITextTable.Examples
 ```
-Poniżej wynik w postaci tekstu (w konsoli tabele są dodatkowo kolorowane: nagłówki, linie, wybrane komórki i tło).
 
 **1. Podstawowa tabela (linie pod każdym wierszem)**
-```
-+--------------+--------+--------+
-|Name          |Language|Stars   |
-+--------------+--------+--------+
-|CLITextTable  |C#      |12      |
-+--------------+--------+--------+
-|GuitarChordCLI|C#      |5       |
-+--------------+--------+--------+
-|Notes         |Markdown|1       |
-+--------------+--------+--------+
-```
+
+![Podstawowa tabela](docs/images/example-1-basic.svg)
 
 **2. Kompaktowa tabela (bez linii wierszy, z odstępami wokół separatorów)**
-```
-+-------------+------------+----------------+
-| Quality [m] | Root       | Chord type [t] |
-+-------------+------------+----------------+
-| Major       | C          | Triad          |
-+-------------+------------+----------------+
-```
+
+![Kompaktowa tabela](docs/images/example-2-compact.svg)
 
 **3. Własne znaki ramki i ograniczenie szerokości komórek (`MaxCellDataWidth`)**
-```
-+======+============#
-!Id    !Description !
-+======+============#
-!1     !Short       !
-!2     !A very long !
-+======+============#
-```
+
+![Własna ramka](docs/images/example-3-custom-frame.svg)
 
 **4. Kolorowanie komórek (`ColorCells`, `SetColor`)** - fragment gryfu gitary; nuty skali na zielono, akord C (C, E, G) na czerwono, jedna komórka czarna na żółtym
-```
-  0     1     2     3     4     5
-+-----+-----+-----+-----+-----+-----+
-| E   | F   | F#  | G   | G#  | A   |
-| B   | C   | C#  | D   | D#  | E   |
-| G   | G#  | A   | A#  | B   | C   |
-+-----+-----+-----+-----+-----+-----+
-```
+
+![Kolorowanie komórek](docs/images/example-4-colored-cells.svg)
 
 **5. Jasne tło (`DefaultBackgroundColor`)**
-```
-+----------+------------+----------+
-| Theme    | Background | Text     |
-+----------+------------+----------+
-| Light    | White      | Black    |
-| Dark     | Black      | Gray     |
-+----------+------------+----------+
-```
 
+![Jasny motyw](docs/images/example-5-light-theme.svg)
+
+### Własne wyjście (`ICliOutput`)
+`table.Print()` pisze do konsoli, ale `table.Print(ICliOutput)` pozwala wyrenderować tabelę gdziekolwiek. Obrazki powyżej powstały właśnie tak: klasa [SvgOutput](examples/CLITextTable.Examples/SvgOutput.cs) zbiera tekst z kolorami i zapisuje SVG.
 ## Opcje (`CliConfigureOptions`)
 | Opcja | Znaczenie | Domyślnie |
 |---|---|---|

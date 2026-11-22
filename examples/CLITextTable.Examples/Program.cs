@@ -3,6 +3,10 @@ using CLITextTable.Configuration;
 
 // Sample tables generated with CLITextTable. Run with:
 //   dotnet run --project examples/CLITextTable.Examples
+// Besides printing to the console, every table is also rendered to docs/images/*.svg
+// (used by the README) through a custom ICliOutput.
+
+string imagesDir = Path.Combine(FindRepositoryRoot(), "docs", "images");
 
 Title("1. Basic table (lines under every row)");
 using (var table = new CliTable(o =>
@@ -16,7 +20,7 @@ using (var table = new CliTable(o =>
     table.AddStringRow(new List<string> { "CLITextTable", "C#", "12" });
     table.AddStringRow(new List<string> { "GuitarChordCLI", "C#", "5" });
     table.AddStringRow(new List<string> { "Notes", "Markdown", "1" });
-    table.Print();
+    Show(table, "example-1-basic", ConsoleColor.Black);
 }
 
 Title("2. Compact table (no row lines, margins around separators)");
@@ -33,7 +37,7 @@ using (var table = new CliTable(o =>
 }, ["Quality [m]", "Root", "Chord type [t]"]))
 {
     table.AddStringRow(new List<string> { "Major", "C", "Triad" });
-    table.Print();
+    Show(table, "example-2-compact", ConsoleColor.Black);
 }
 
 Title("3. Custom frame characters and fixed column width limit");
@@ -50,7 +54,7 @@ using (var table = new CliTable(o =>
 {
     table.AddStringRow(new List<string> { "1", "Short" });
     table.AddStringRow(new List<string> { "2", "A very long description is cut" });
-    table.Print();
+    Show(table, "example-3-custom-frame", ConsoleColor.Black);
 }
 
 Title("4. Colored cells (ColorCells and SetColor)");
@@ -79,7 +83,7 @@ using (var table = new CliTable(o =>
 
     // Color one cell: column 5, row 2, black on yellow.
     table.SetColor(5, 2, ConsoleColor.Black, ConsoleColor.Yellow);
-    table.Print();
+    Show(table, "example-4-colored-cells", ConsoleColor.Black);
 }
 
 Title("5. Light theme (DefaultBackgroundColor)");
@@ -92,19 +96,36 @@ using (var table = new CliTable(o =>
     o.DefaultBackgroundColor = ConsoleColor.White;
     o.DefaultHeaderColor = ConsoleColor.DarkBlue;
     o.DefaultRowColor = ConsoleColor.Black;
-    o.DefaultRowLineColor = ConsoleColor.Gray;
+    o.DefaultRowLineColor = ConsoleColor.DarkGray;
 }, ["Theme", "Background", "Text"]))
 {
     table.AddStringRow(new List<string> { "Light", "White", "Black" });
     table.AddStringRow(new List<string> { "Dark", "Black", "Gray" });
-    table.Print();
+    Show(table, "example-5-light-theme", ConsoleColor.White);
 }
 
 Console.ResetColor();
+
+void Show(CliTable table, string fileName, ConsoleColor background)
+{
+    table.Print();
+
+    var svg = new SvgOutput(background);
+    table.Print(svg);
+    svg.Save(Path.Combine(imagesDir, fileName + ".svg"));
+}
 
 static void Title(string text)
 {
     Console.ResetColor();
     Console.WriteLine();
     Console.WriteLine(text);
+}
+
+static string FindRepositoryRoot()
+{
+    var dir = new DirectoryInfo(AppContext.BaseDirectory);
+    while (dir != null && !File.Exists(Path.Combine(dir.FullName, "CLITextTable.sln")))
+        dir = dir.Parent;
+    return dir?.FullName ?? Directory.GetCurrentDirectory();
 }

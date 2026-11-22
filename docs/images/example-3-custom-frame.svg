@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204.4" height="142" viewBox="0 0 204.4 142">
+  <rect width="100%" height="100%" rx="6" fill="#0C0C0C"/>
+  <g font-family="Consolas, 'DejaVu Sans Mono', Menlo, monospace" font-size="14">
+    <text x="14 22.4 30.8 39.2 47.6 56 64.4 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 173.6 182" y="28" fill="#F2F2F2">+======+============#</text>
+    <text x="14 22.4 30.8 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 182" y="47" fill="#B4009E">!Id!Description!</text>
+    <text x="14 22.4 30.8 39.2 47.6 56 64.4 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 173.6 182" y="66" fill="#F2F2F2">+======+============#</text>
+    <text x="14" y="85" fill="#F2F2F2">!</text>
+    <text x="22.4" y="85" fill="#F2F2F2">1</text>
+    <text x="72.8" y="85" fill="#F2F2F2">!</text>
+    <text x="81.2 89.6 98 106.4 114.8" y="85" fill="#F2F2F2">Short</text>
+    <text x="182" y="85" fill="#F2F2F2">!</text>
+    <text x="14" y="104" fill="#F2F2F2">!</text>
+    <text x="22.4" y="104" fill="#F2F2F2">2</text>
+    <text x="72.8" y="104" fill="#F2F2F2">!</text>
+    <text x="81.2 98 106.4 114.8 123.2 140 148.4 156.8 165.2" y="104" fill="#F2F2F2">Averylong</text>
+    <text x="182" y="104" fill="#F2F2F2">!</text>
+    <text x="14 22.4 30.8 39.2 47.6 56 64.4 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 173.6 182" y="123" fill="#F2F2F2">+======+============#</text>
+  </g>
+</svg>

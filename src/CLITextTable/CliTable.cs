@@ -82,7 +82,11 @@ namespace CLITextTable.CliTable
                             cell[i][j].BackgroundColor = options.BackgroundColor;
                         }
         }
-        public void Print()
+        /// <summary>Prints the table to the console.</summary>
+        public void Print() => Print(new ConsoleCliOutput());
+
+        /// <summary>Prints the table to any output (console, SVG, HTML, ...).</summary>
+        public void Print(ICliOutput output)
         {
 
             var separators = new CliLineSeparators(options.RowSeparatorMarginLeft, options.RowSeparatorMarginRight, options.ColumnSeparator);
@@ -94,12 +98,12 @@ namespace CLITextTable.CliTable
 
             //  Print Header
             if (options.DrawHeaderLine)
-                CliPrinter.WriteLine(theLine, options.DefaultRowLineColor, bg);
+                output.WriteLine(theLine, options.DefaultRowLineColor, bg);
             // Print Header names
-            CliPrinter.WriteLine(formater.PrepareHeader(headers), options.DefaultHeaderColor, bg);
+            output.WriteLine(formater.PrepareHeader(headers), options.DefaultHeaderColor, bg);
 
             //  Print line below header  - always visible            
-            CliPrinter.WriteLine(theLine, options.DefaultRowLineColor, bg);
+            output.WriteLine(theLine, options.DefaultRowLineColor, bg);
 
             //  Print Rows
             foreach (var row in cell)
@@ -108,31 +112,31 @@ namespace CLITextTable.CliTable
                 formater.CalculateCellWidth(row);
 
                 //  Prepare the first separator  | ----
-                CliPrinter.Write(separators.LeftSeparator, options.DefaultRowLineColor, bg);
+                output.Write(separators.LeftSeparator, options.DefaultRowLineColor, bg);
 
                 //  Prepare the row data  
                 for (var x = 0; x < column.Count; x++)
                 {
-                    CliPrinter.Write(row[x].Value, row[x].Color, row[x].BackgroundColor);
+                    output.Write(row[x].Value, row[x].Color, row[x].BackgroundColor);
 
                     //  Primt the separator behind cell data  "data |"
                     if (x < column.Count - 1)
-                        CliPrinter.Write(separators.Separator, options.DefaultRowLineColor, bg);
+                        output.Write(separators.Separator, options.DefaultRowLineColor, bg);
                 }
 
                 //  Prepare the last separator  --- |
-                CliPrinter.WriteLine(separators.RightSeparator, options.DefaultRowLineColor, bg);
+                output.WriteLine(separators.RightSeparator, options.DefaultRowLineColor, bg);
 
                 //  Print the row below data
                 if (options.DrawRowLines)
-                    CliPrinter.WriteLine(theLine, options.DefaultRowLineColor, bg);
+                    output.WriteLine(theLine, options.DefaultRowLineColor, bg);
             }
 
             //  Print the last line
             if (!options.DrawRowLines || cell.Count == 0)
-                CliPrinter.Write(theLine, options.DefaultRowLineColor, bg);
+                output.Write(theLine, options.DefaultRowLineColor, bg);
 
-            CliPrinter.WriteLine("", options.DefaultRowLineColor, bg);
+            output.WriteLine("", options.DefaultRowLineColor, bg);
         }
     }
 }

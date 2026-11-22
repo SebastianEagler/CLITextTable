@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="338.8" height="142" viewBox="0 0 338.8 142">
+  <rect width="100%" height="100%" rx="6" fill="#0C0C0C"/>
+  <g font-family="Consolas, 'DejaVu Sans Mono', Menlo, monospace" font-size="14">
+    <text x="30.8 81.2 131.6 182 232.4 282.8" y="28" fill="#3A96DD">012345</text>
+    <text x="14 22.4 30.8 39.2 47.6 56 64.4 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 173.6 182 190.4 198.8 207.2 215.6 224 232.4 240.8 249.2 257.6 266 274.4 282.8 291.2 299.6 308 316.4" y="47" fill="#767676">+-----+-----+-----+-----+-----+-----+</text>
+    <text x="14" y="66" fill="#767676">|</text>
+    <text x="30.8" y="66" fill="#E74856">E</text>
+    <text x="64.4" y="66" fill="#767676">|</text>
+    <text x="81.2" y="66" fill="#16C60C">F</text>
+    <text x="114.8" y="66" fill="#767676">|</text>
+    <text x="131.6 140" y="66" fill="#767676">F#</text>
+    <text x="165.2" y="66" fill="#767676">|</text>
+    <text x="182" y="66" fill="#E74856">G</text>
+    <text x="215.6" y="66" fill="#767676">|</text>
+    <text x="232.4 240.8" y="66" fill="#767676">G#</text>
+    <text x="266" y="66" fill="#767676">|</text>
+    <text x="282.8" y="66" fill="#16C60C">A</text>
+    <text x="316.4" y="66" fill="#767676">|</text>
+    <text x="14" y="85" fill="#767676">|</text>
+    <text x="30.8" y="85" fill="#16C60C">B</text>
+    <text x="64.4" y="85" fill="#767676">|</text>
+    <text x="81.2" y="85" fill="#E74856">C</text>
+    <text x="114.8" y="85" fill="#767676">|</text>
+    <text x="131.6 140" y="85" fill="#767676">C#</text>
+    <text x="165.2" y="85" fill="#767676">|</text>
+    <text x="182" y="85" fill="#16C60C">D</text>
+    <text x="215.6" y="85" fill="#767676">|</text>
+    <text x="232.4 240.8" y="85" fill="#767676">D#</text>
+    <text x="266" y="85" fill="#767676">|</text>
+    <text x="282.8" y="85" fill="#E74856">E</text>
+    <text x="316.4" y="85" fill="#767676">|</text>
+    <text x="14" y="104" fill="#767676">|</text>
+    <text x="30.8" y="104" fill="#E74856">G</text>
+    <text x="64.4" y="104" fill="#767676">|</text>
+    <text x="81.2 89.6" y="104" fill="#767676">G#</text>
+    <text x="114.8" y="104" fill="#767676">|</text>
+    <text x="131.6" y="104" fill="#16C60C">A</text>
+    <text x="165.2" y="104" fill="#767676">|</text>
+    <text x="182 190.4" y="104" fill="#767676">A#</text>
+    <text x="215.6" y="104" fill="#767676">|</text>
+    <text x="232.4" y="104" fill="#16C60C">B</text>
+    <text x="266" y="104" fill="#767676">|</text>
+    <rect x="282.8" y="90" width="25.2" height="19" fill="#F9F1A5"/>
+    <text x="282.8" y="104" fill="#0C0C0C">C</text>
+    <text x="316.4" y="104" fill="#767676">|</text>
+    <text x="14 22.4 30.8 39.2 47.6 56 64.4 72.8 81.2 89.6 98 106.4 114.8 123.2 131.6 140 148.4 156.8 165.2 173.6 182 190.4 198.8 207.2 215.6 224 232.4 240.8 249.2 257.6 266 274.4 282.8 291.2 299.6 308 316.4" y="123" fill="#767676">+-----+-----+-----+-----+-----+-----+</text>
+  </g>
+</svg>
