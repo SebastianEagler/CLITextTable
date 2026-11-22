@@ -28,6 +28,7 @@ namespace CLITextTable.Tests
         }
     }
 
+    [Collection("Console")]
     public class CliTableTests
     {
         private static CliTable.CliTable CreateTable(Action<CliConfigureOptions>? configure = null)

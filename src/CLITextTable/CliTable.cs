@@ -52,7 +52,7 @@ namespace CLITextTable.CliTable
             cell.Add(row.ToList());
             for (int i = 0; i < column.Count; i++)
             {
-                column[i].Width = Math.Max(column[i].Width, row.ElementAt(i).Value.Length);
+                column[i].Width = Math.Max(column[i].Width, Math.Min(row.ElementAt(i).Value.Length, options.MaxCellDataWidth));
             }
             //columnLength = columnLength.Zip(row, (col, rowItem) => Math.Max(col, rowItem.Value.Length)).ToList();
         }
@@ -85,7 +85,7 @@ namespace CLITextTable.CliTable
         public void Print()
         {
 
-            var separators = new CliLineSeparators(options.RowSeparatorMarginLeft, options.RowSeparatorMarginRight);
+            var separators = new CliLineSeparators(options.RowSeparatorMarginLeft, options.RowSeparatorMarginRight, options.ColumnSeparator);
             var formater = new CliLineFormater(this.options, column, separators);
             var bg = options.DefaultBackgroundColor;
 
