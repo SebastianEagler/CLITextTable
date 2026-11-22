@@ -57,12 +57,5 @@ Do czasu publikacji pakietu NuGet dodaj referencję do projektu:
 <ProjectReference Include="..\CLITextTable\src\CLITextTable\CLITextTable.csproj" />
 ```
 
-## Repozytorium na GitHubie
-Repozytorium jest na razie tylko lokalne. Aby je wypchnąć:
-```
-git remote add origin https://github.com/SebastianEagler/CLITextTable.git
-git push -u origin main
-```
-
 ## Licencja
 MIT, zobacz [LICENSE](LICENSE).
